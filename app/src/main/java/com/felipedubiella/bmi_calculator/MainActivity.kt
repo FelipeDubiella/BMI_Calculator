@@ -21,10 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         btnCalculate.setOnClickListener {
 
-            val height = edtHeight.text.toString()
-            val Weight = edtWeight.text.toString()
+            val height: Float = edtHeight.text.toString().toFloat()
+            val weight: Float = edtWeight.text.toString().toFloat()
 
-            println("Peso e altura: " + height + " " + Weight)
+            val heightQ2 = height * height
+            val result = weight / heightQ2
+
+            println(result)
 
 
         }
