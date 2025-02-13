@@ -1,8 +1,10 @@
 package com.felipedubiella.bmi_calculator
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -26,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             val weightStr: String = edtWeight.text.toString()
 
             if (heightStr == "" || weightStr == ""){
-                //Mostrar mensagem para usuario
                 Snackbar
                     .make(
                         edtWeight,
@@ -43,9 +44,12 @@ class MainActivity : AppCompatActivity() {
                 val heightQ2 = height * height
                 val result = weight / heightQ2
 
-                println(result)
+                //Navegar para a próxima tela
+                //Criar o layout da proxima tela
+                //Passar dados para a próxima tela
 
-
+                val intent = Intent(this, resultActivity::class.java)
+                startActivity(intent)
 
             }
 
