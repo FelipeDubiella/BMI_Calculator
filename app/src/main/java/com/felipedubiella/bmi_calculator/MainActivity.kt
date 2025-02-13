@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -21,14 +22,32 @@ class MainActivity : AppCompatActivity() {
 
         btnCalculate.setOnClickListener {
 
-            val height: Float = edtHeight.text.toString().toFloat()
-            val weight: Float = edtWeight.text.toString().toFloat()
+            val heightStr: String = edtHeight.text.toString()
+            val weightStr: String = edtWeight.text.toString()
 
-            val heightQ2 = height * height
-            val result = weight / heightQ2
+            if (heightStr == "" || weightStr == ""){
+                //Mostrar mensagem para usuario
+                Snackbar
+                    .make(
+                        edtWeight,
+                        "Fill all the fields",
+                        Snackbar.LENGTH_LONG)
+                    .show()
 
-            println(result)
+            }else{
 
+                val height = heightStr.toFloat()
+                val weight = weightStr.toFloat()
+
+
+                val heightQ2 = height * height
+                val result = weight / heightQ2
+
+                println(result)
+
+
+
+            }
 
         }
 
