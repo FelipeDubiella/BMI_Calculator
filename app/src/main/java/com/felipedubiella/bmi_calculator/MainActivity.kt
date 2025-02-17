@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 //Passar dados para a próxima tela
 
                 val intent = Intent(this, resultActivity::class.java)
+                intent.putExtra(KEY_RESULT_IMC, result)
                 startActivity(intent)
 
             }
