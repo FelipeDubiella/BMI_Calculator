@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +8,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/vg_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:src="@drawable/healthcare_scales_svgrepo_com"
+            android:layout_margin="20dp"
+            app:tint="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI Calculator"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fill all the fields with your Weight and Height to calculate you Body Mass Index"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+
+
     <Button
         android:id="@+id/btnCalculate"
         android:layout_width="match_parent"
@@ -14,6 +54,9 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="10dp"
         android:text="Calculate"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:backgroundTint="@color/primaryBottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -25,15 +68,20 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
+        android:background="@drawable/rounded_bg_top"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/vg_header">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg_top"
+            android:drawableEnd="@drawable/height_svgrepo_com"
+            android:drawableTint="#525455"
             android:hint="Write your Height Ex: 1.82"
             android:inputType="numberDecimal"
             android:maxLength="4" />
@@ -42,6 +90,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:background="@drawable/rounded_bg_top"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +103,9 @@
             android:id="@+id/edtWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/healthcare_scales_svgrepo_com"
+            android:drawableTint="#525455"
+            android:background="@drawable/rounded_bg_top"
             android:hint="Write your weight Ex: 88.900"
             android:inputType="numberDecimal"
             android:maxLength="6"/>
