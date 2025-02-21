@@ -1,38 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".resultActivity">
 
 
-    <TextView
-        android:id="@+id/tvResult"
+    <LinearLayout
+        android:id="@+id/vg_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="TextView"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:maxLength="5"/>
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="50dp"
+            android:src="@drawable/healthcare_scales_svgrepo_com"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI Calculator"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm your BMI result and Classification below:"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"/>
+
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxLength="5"
+            android:textStyle="bold"
+            tools:text=""
+            android:textColor="@color/white"
+            android:textSize="52sp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/tvClassificationLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Your BMI Classification is: " />
+        android:layout_marginTop="60dp"
+        android:textSize="21dp"
+        android:text="Your BMI Classification is: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_header" />
 
     <TextView
         android:id="@+id/tvClassification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:gravity="center_horizontal"
-        tools:text=" " />
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClassificationLabel"
+        tools:text=" "/>
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
